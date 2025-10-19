@@ -13,6 +13,10 @@ class Trainer extends Model
         'years_exp'
     ];
 
+    protected $casts = [
+        'years_exp' => 'integer'
+    ];
+
     public function courses(){
         return $this->hasMany(Course::class);
     }
