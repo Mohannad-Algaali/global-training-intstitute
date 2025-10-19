@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Laravel\Prompts\Output\ConsoleOutput;
+
 
 class StudentController extends Controller
 {
@@ -11,9 +14,12 @@ class StudentController extends Controller
      * Display a listing of the resource.
      */
     public function index()
+
     {
+        Log::info('hello');
+        $output = new ConsoleOutput();
+        $output->writeln('Hello terminal');
         $students = Student::all();
-        echo( "someone called this function for students");
         return $students;
     }
 
